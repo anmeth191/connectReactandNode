@@ -34,6 +34,28 @@
 
 //create the local server in nodeJS using express 
 
+//DEFINE MY OPERATIONS FOR EACH RESOURCE IN THE MODEL
+
+/*
+for /home/users
+GET
+POST
+/home/users/:userId
+GET
+POST
+
+/home/courses
+GET
+POST
+PUT
+DELETE
+
+DEFINE THE CONTENT-TYPE IN THE REQUEST OPRATION
+headers: {'Content-Type':'application/json'}
+by using axios automatically does it  
+
+*/
+
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
