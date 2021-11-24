@@ -17,20 +17,25 @@ app.use(session({
 }))
 
 const checkCors = app.use((request , response , next) =>{
-     
-   request.header('Access-Control-Allow-Origin' , '*');
+   response.header("Access-Control-Allow-Origin" , "http://localhost:3000");
    next();
 
 })
 
 
-app.get('/' , checkCors , (request , response ) =>{
-    console.log(request.session);
 
- //   request.session.isAuth = true;
-    response.send('<h1>Hello from the server</h1>');
+app.get('/', (request , response ) =>{
+    response.send('Hello user')
 })
 
+
+app.get('/login' , (request , response) =>{
+    
+
+    response.json({
+        message:'Hello from the login component'
+    })
+})
 
 app.listen(8000 , ()=>{
     console.log('server running');
